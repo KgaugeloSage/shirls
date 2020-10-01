@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HotelManagementApp</string>
+    <string name="prompt_roles">ROLES</string>
+
+    <string-array name="roles_array">
+        <item>Owner</item>
+        <item>Guest</item>
+        <item>Hotel Manager</item>
+    </string-array>
+</resources>
