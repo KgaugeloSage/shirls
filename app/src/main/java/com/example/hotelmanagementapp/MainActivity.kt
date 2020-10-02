@@ -50,7 +50,12 @@ class MainActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 if (it.password.equals(password)) {
-                    Toast.makeText(this@MainActivity, "LoggedIn successfully as "+ it.fullName, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "Logged In successfully as "+ it.fullName, Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@MainActivity, GuestActivity::class.java)
+                    intent.putExtra("full_name", it.fullName)
+                    intent.putExtra("room_type", it.roomType)
+                    intent.putExtra("price", it.price)
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this@MainActivity, "Incorrect Password", Toast.LENGTH_SHORT).show()
                 }

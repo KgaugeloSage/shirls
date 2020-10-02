@@ -33,7 +33,7 @@ class Register : AppCompatActivity() {
     }
 
     private fun register(username: String, fullName: String, password: String) {
-        val userModel = UserModel(username,password,fullName)
+        val userModel = UserModel(username,password,fullName,"","")
         val call : Call<UserModel> = myAPI.registerUser(userModel)
         call.enqueue(object : Callback<UserModel>{
             override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
