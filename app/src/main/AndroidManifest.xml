@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GuestActivity"></activity>
+        <activity android:name=".ViewBooking"></activity>
+        <activity android:name=".GuestMain" />
+        <activity android:name=".GuestActivity" />
         <activity android:name=".GuestPage" />
         <activity android:name=".Register" />
         <activity android:name=".MainActivity">

@@ -26,18 +26,44 @@ class Register : AppCompatActivity() {
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
+        val errorMassage = "Required"
 
         register_button.setOnClickListener {
-            register(edt_username.text.toString(),edt_full_name.text.toString(),edt_password.text.toString())
+            if (edt_full_name.text?.isEmpty()!!) {
+                edt_full_name.error = errorMassage
+            }
+            if (edt_username.text?.isEmpty()!!) {
+                edt_username.error = errorMassage
+            }
+            if (edt_password.text?.isEmpty()!!) {
+                edt_password.error = errorMassage
+            }
+            if (edt_confirm_password.text?.isEmpty()!!) {
+                edt_confirm_password.error = errorMassage
+            }
+            if (edt_password.text.toString() == edt_confirm_password.text.toString()) {
+                register(
+                    edt_username.text.toString(),
+                    edt_full_name.text.toString(),
+                    edt_password.text.toString()
+                )
+            } else {
+                edt_confirm_password.error = "Password Has To Match"
+            }
+
         }
     }
 
     private fun register(username: String, fullName: String, password: String) {
-        val userModel = UserModel(username,password,fullName,"","")
-        val call : Call<UserModel> = myAPI.registerUser(userModel)
-        call.enqueue(object : Callback<UserModel>{
+        val userModel = UserModel(username, password, fullName, "", "")
+        val call: Call<UserModel> = myAPI.registerUser(userModel)
+        call.enqueue(object : Callback<UserModel> {
             override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
-                Toast.makeText(this@Register, response.body()?.fullName+" Your Account has been created\n\n Login Please", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@Register,
+                    response.body()?.fullName + " Your Account has been created\n\n Login Please",
+                    Toast.LENGTH_SHORT
+                ).show()
                 val intent = Intent(this@Register, MainActivity::class.java)
                 startActivity(intent)
             }
