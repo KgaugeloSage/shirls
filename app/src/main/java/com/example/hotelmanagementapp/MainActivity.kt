@@ -64,6 +64,8 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("full_name", it.fullName)
                     intent.putExtra("room_type", it.roomType)
                     intent.putExtra("price", it.price)
+                    intent.putExtra("check_in",it.checkIn)
+                    intent.putExtra("check_out",it.checkOut)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@MainActivity, "Incorrect Password", Toast.LENGTH_SHORT)

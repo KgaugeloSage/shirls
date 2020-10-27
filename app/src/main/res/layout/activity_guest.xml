@@ -67,7 +67,7 @@
                 android:id="@+id/btn_room_change"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Change" />
+                android:text="Set" />
 
             <Spinner
                 android:id="@+id/roomlist"
@@ -127,7 +127,7 @@
                 android:id="@+id/btn_change_check_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Change" />
+                android:text="Set" />
 
         </TableRow>
 
@@ -162,7 +162,7 @@
                 android:id="@+id/btn_change_check_in"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Change" />
+                android:text="Set" />
 
         </TableRow>
 
@@ -171,8 +171,8 @@
 
 
     <Button
-        android:id="@+id/btn_back"
-        android:text="Back"
+        android:id="@+id/btn_save"
+        android:text="Save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"/>

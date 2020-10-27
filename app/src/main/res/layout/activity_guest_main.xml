@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/welcomeMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"
@@ -41,12 +41,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcome"
+        app:layout_constraintTop_toBottomOf="@id/welcomeMain"
         app:layout_constraintBottom_toTopOf="@id/btn_update_booking"/>
 
     <Button
         android:id="@+id/btn_update_booking"
-        android:text="Update Booking"
+        android:text="Update Or Make Booking"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
